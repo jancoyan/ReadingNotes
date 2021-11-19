@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jancoyan.readingnotes.mapper.BookMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jancoyan.readingnotes.pojo.Book">
+        <id column="id" property="id" />
+        <result column="book_name" property="bookName" />
+        <result column="book_author" property="bookAuthor" />
+        <result column="finish_date" property="finishDate" />
+        <result column="word_count" property="wordCount" />
+        <result column="book_publisher" property="bookPublisher" />
+        <result column="book_type" property="bookType" />
+        <result column="publish_time" property="publishTime" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modify" property="gmtModify" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, book_name, book_author, finish_date, word_count, book_publisher, book_type, publish_time, gmt_create, gmt_modify
+    </sql>
+
+</mapper>

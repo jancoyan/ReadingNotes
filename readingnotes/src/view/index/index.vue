@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    this is index page
+
   </div>
 </template>
 
@@ -17,4 +17,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 </style>

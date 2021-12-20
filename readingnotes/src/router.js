@@ -8,16 +8,23 @@ export const constantRoutes = [
         path: '/',
         name: 'index',
         component: () => import('./view/index/index'),
-    },
-    {
-        path: '/statistic',
-        name: 'statistic',
-        component: () => import('./view/index/statistic'),
-    },
-    {
-        path: '/table',
-        name: 'table',
-        component: () => import('./view/index/table'),
+        children:[
+            {
+                path: '/',
+                name: 'index',
+                component: () => import('./view/index/BookWaterfall'),
+            },
+            {
+                path: '/statistic',
+                name: 'statistic',
+                component: () => import('./view/index/statistic'),
+            },
+            {
+                path: '/table',
+                name: 'table',
+                component: () => import('./view/index/table'),
+            },
+        ]
     },
     {
         path: '/404',

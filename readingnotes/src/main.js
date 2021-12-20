@@ -5,10 +5,13 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 
+import waterfall2 from 'vue-waterfall2'  
+
 // 全局CSS
 import './style/index.css'
 
 Vue.use(ElementUI)
+Vue.use(waterfall2)
 
 Vue.config.productionTip = false
 

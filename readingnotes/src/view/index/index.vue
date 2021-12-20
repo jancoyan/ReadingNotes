@@ -8,11 +8,20 @@
         <li><a href="#">Login</a></li>
       </ul>
     </header>
-    <div class="bg">
 
+    <!-- 背景 -->
+    <div class="bg">
+      <div class="text"></div>
+      
     </div>
 
+    <!-- 瀑布流 -->
+    <div class="waterfall">
+      
+    </div>
 
+    <!-- 回到顶部 -->
+     <el-backtop></el-backtop>
   </div>
 </template>
 
@@ -38,21 +47,6 @@ export default {
   /* x轴上超出部分隐藏 */
   overflow-x: hidden;
 
-  .bg{
-    /* 子绝父相-父元素相对定位，宽高占满屏 */
-    position: relative;
-    background-image: url("/src/assets/background.png");
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-    /* 弹性盒模型，文字和按钮居中显示 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 滑动的时候超出，这时候隐藏 */
-    overflow: hidden;
-  }
-
   header{
     /* 导航栏绝对定位 */
     position: absolute;
@@ -66,7 +60,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     /* 显示在最顶层 */
-    //z-index: 1000;
+    z-index: 1000;
 
     .logo{
       color: white;
@@ -78,6 +72,7 @@ export default {
       /* 字符间距 */
       letter-spacing: 2px;
     }
+
     ul{
       /* 弹性盒模型 */
       display: flex;
@@ -104,7 +99,42 @@ export default {
 
   }
 
+  .bg{
+    /* 子绝父相-父元素相对定位，宽高占满屏 */
+    position: relative;
+    background-image: url("../../assets/background.png");
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    /* 弹性盒模型，文字和按钮居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 滑动的时候超出，这时候隐藏 */
+    overflow: hidden;
+    
+    // 背景向下渐变逐渐消失
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, #764538, transparent);
+      z-index: 1000;
+    }
 
+    .text{
+      position: relative;
+      color: #fff;
+      font-size: 3em;
+    }
+
+  }
+
+  .waterfall{
+    height: 5000px;
+  }
 
 
 

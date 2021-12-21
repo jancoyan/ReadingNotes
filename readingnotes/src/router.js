@@ -27,6 +27,35 @@ export const constantRoutes = [
         ]
     },
     {
+        path:'/login',
+        name:'login',
+        component: () => import('./view/back/login')
+    },
+    {
+        path:"/back",
+        name: "back",
+        redirect: '/back/manage',
+        component: () => import('./view/back/index'),
+        children: [
+            {
+                path: '/back/manage',
+                name: 'manage',
+                component: () => import('./view/back/manage'),
+            },
+            {
+                path: '/back/add',
+                name: 'add',
+                component: () => import('./view/back/add'),
+            },
+            {
+                path: '/back/viewer',
+                name: 'viewer',
+                component: () => import('./view/back/viewer'),
+            },
+        ]
+    },
+
+    {
         path: '/404',
         component: () => import('./view/404'),
         hidden: true

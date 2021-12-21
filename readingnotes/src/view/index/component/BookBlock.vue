@@ -48,7 +48,7 @@ export default{
     padding-top: 5px;
 
     .el-tag{
-      margin: 0 3px;
+      margin: 5px 3px;
     }
   }
 }

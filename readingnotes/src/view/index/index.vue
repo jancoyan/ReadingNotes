@@ -1,18 +1,18 @@
 <template>
   <div class="index">
     <header>
-      <a href="#" class="logo">Read</a>
+      <router-link to="/" class="logo">Read</router-link>
       <ul>
-        <li><a href="#">List</a></li>
-        <li><a href="#">Statistic</a></li>
-        <li><a href="#">Login</a></li>
+        <li><router-link to="/table">List</router-link></li>
+        <li><router-link to="/statistic">Statistic</router-link></li>
+        <li><router-link to="/login" target="_blank">Login</router-link></li>
       </ul>
     </header>
 
     <!-- 背景 -->
     <div class="bg">
       <div id="text" class="text">读书是为了摆脱自我的狭隘。——罗翔</div>
-      <a href="#router" class="btn">进入</a>
+      <a href="#router" class="btn" id="btn">进入</a>
     </div>
     <!-- 次级组件渲染的位置 -->
     <router-view id="router" class="local-router" />
@@ -29,12 +29,12 @@ export default {
   },
   mounted: function() {
     // 添加滚动监听
-    var text = document.getElementById("text");
-    var local_router = document.getElementById("router");
-    console.log(text)
+    const text = document.getElementById("text");
+    const btn = document.getElementById("btn");
     window.addEventListener('scroll', function(){
       let value = window.scrollY
-      text.style.left = value * 2 + 'px'
+      text.style.top = value * -1 + 'px'
+      btn.style.top = value * 2 + 'px'
     }) 
   },
   methods: {
@@ -108,11 +108,13 @@ export default {
     /* 子绝父相-父元素相对定位，宽高占满屏 */
     position: relative;
     background-image: url("../../assets/background.png");
+    background-attachment: fixed;
     width: 100%;
     height: 100vh;
     padding: 100px;
     /* 弹性盒模型，文字和按钮居中显示 */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* 滑动的时候超出，这时候隐藏 */
@@ -131,7 +133,7 @@ export default {
 
     .text{
       position: relative;
-      color: #fff;
+      color: rgb(236, 232, 232);
       font-size: 3em;
       top: -40px;
       animation: textenter 0.6s linear;
@@ -141,7 +143,7 @@ export default {
       display: inline-block;
       text-decoration: none;
       padding: 8px 30px;
-      position: absolute;
+      position: relative;
       border-radius: 40px;
       background: #fff;
       color: #2b1055;

@@ -10,10 +10,13 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
+    "marked": "^4.0.8",
     "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
     "vue": "^2.6.11",
+    "vue-cropper": "^0.5.8",
     "vue-router": "^3.5.3",
+    "vue-scroll": "^2.1.13",
     "vue-waterfall2": "^1.10.1"
   },
   "devDependencies": {

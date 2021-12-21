@@ -1,6 +1,6 @@
 package com.jancoyan.readingnotes.service;
 
-import com.jancoyan.readingnotes.pojo.Book_note;
+import com.jancoyan.readingnotes.pojo.BookNote;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author YanJingcun
  * @since 2021-11-19
  */
-public interface Book_noteService extends IService<Book_note> {
+public interface BookNoteService extends IService<BookNote> {
 
 }

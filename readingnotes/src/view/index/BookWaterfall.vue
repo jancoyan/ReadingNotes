@@ -1,6 +1,6 @@
 <template>
   <div class="waterfall">
-    <waterfall :col="4" :data="[1,2,3,4,5,6,7,8]">
+    <waterfall :col="5" :data="[1,2,3,4,5,6,7,8]">
         <template>
           <div
             class="waterfall-item"
